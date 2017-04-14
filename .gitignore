@@ -1,1 +1,11 @@
 /build/
+/.classpath
+/.project
+/.settings/
+
+#ignore folder out
+
+out/
+
+#ignore folder .idea
+.idea
