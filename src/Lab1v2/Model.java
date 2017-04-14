@@ -11,7 +11,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-
+//!
 public class Model  { 
 	private static final String FILE_NAME = "src/resources/DishMenu.xml"; 
 	 boolean flag;
