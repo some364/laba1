@@ -12,7 +12,7 @@ public class ValidationInputData  {
 	public   String regExPrice() throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		for(;;) {
-		System.out.println("внутри regExPrice");	
+		System.out.println("РІРЅСѓС‚СЂРё regExPrice");	
         	String inputString = reader.readLine();
         	String pattern = "(\\d)";        
         	Pattern ptrn = Pattern.compile(pattern);
@@ -32,7 +32,7 @@ public class ValidationInputData  {
 	public  String regExString () throws IOException  {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		for(;;) {
-		System.out.println("внутри regExPrice");	
+		System.out.println("РІРЅСѓС‚СЂРё regExPrice");	
         	String inputString = reader.readLine();
         	String pattern = "\\W";        
         	Pattern ptrn = Pattern.compile(pattern);
@@ -42,7 +42,7 @@ public class ValidationInputData  {
         		return inputString;
         	}
         	else {
-        		System.out.println("Вы ввели не корректное название, введите название заново"); 
+        		System.out.println("Р’С‹ РІРІРµР»Рё РЅРµ РєРѕСЂСЂРµРєС‚РЅРѕРµ РЅР°Р·РІР°РЅРёРµ, РІРІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ Р·Р°РЅРѕРІРѕ"); 
         		continue;
         	}
 		}
@@ -52,7 +52,7 @@ public class ValidationInputData  {
 	public String regExFileName() throws IOException  {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		for(;;) {
-		System.out.println("внутри regExPrice");	
+		System.out.println("РІРЅСѓС‚СЂРё regExPrice");	
         	String inputString = reader.readLine();
         	String pattern = "(^|*\\?<>)";        
         	Pattern ptrn = Pattern.compile(pattern);
@@ -62,7 +62,7 @@ public class ValidationInputData  {
         		return inputString;
         	}
         	else {
-        		System.out.println("Вы ввели не допустимые символы, полный путь к файлу заново"); 
+        		System.out.println("Р’С‹ РІРІРµР»Рё РЅРµ РґРѕРїСѓСЃС‚РёРјС‹Рµ СЃРёРјРІРѕР»С‹, РїРѕР»РЅС‹Р№ РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ Р·Р°РЅРѕРІРѕ"); 
         		continue;
         }
 		}

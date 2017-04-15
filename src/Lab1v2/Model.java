@@ -31,8 +31,8 @@ public class Model  {
                  break;
         	 }
          }
-         if(flag == false) removedFeedBack = dishToRemove +" не удалось удалить так как в меню, блюдо уже отсутствует"; 
-         else removedFeedBack = "Блюдо " +dishToRemove + " удалено";
+         if(flag == false) removedFeedBack = dishToRemove +" РЅРµ СѓРґР°Р»РѕСЃСЊ СѓРґР°Р»РёС‚СЊ С‚Р°Рє РєР°Рє РІ РјРµРЅСЋ, Р±Р»СЋРґРѕ СѓР¶Рµ РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚"; 
+         else removedFeedBack = "Р‘Р»СЋРґРѕ " +dishToRemove + " СѓРґР°Р»РµРЅРѕ";
       
          Marshaller m = context.createMarshaller();
          m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
@@ -63,7 +63,7 @@ public class Model  {
 	        	 }
 	         }
 	         
-	         if(flag == true) addedFeedBack =name +" не возможно добавить, в меню уже есть такое блюдо";
+	         if(flag == true) addedFeedBack =name +" РЅРµ РІРѕР·РјРѕР¶РЅРѕ РґРѕР±Р°РІРёС‚СЊ, РІ РјРµРЅСЋ СѓР¶Рµ РµСЃС‚СЊ С‚Р°РєРѕРµ Р±Р»СЋРґРѕ";
 	         else {
 	        	 Dish addDish = new Dish();
 	        	 
@@ -76,7 +76,7 @@ public class Model  {
 	          		addDish.setName(name);
 	          		addDish.setPrice(price);
 	          		dishlist.add(addDish);
-	          		addedFeedBack =name + " добавлен в меню";  
+	          		addedFeedBack =name + " РґРѕР±Р°РІР»РµРЅ РІ РјРµРЅСЋ";  
 	         }
 	         Marshaller m = context.createMarshaller();
 	         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
@@ -127,9 +127,9 @@ public class Model  {
 	         	}
 	         } 
 	         
-	         if(flag == false) updatedFeedBack =dishToUpdate +" не возможно изменить, в меню нет такого блюда или имя " + newName +" уже занято";
+	         if(flag == false) updatedFeedBack =dishToUpdate +" РЅРµ РІРѕР·РјРѕР¶РЅРѕ РёР·РјРµРЅРёС‚СЊ, РІ РјРµРЅСЋ РЅРµС‚ С‚Р°РєРѕРіРѕ Р±Р»СЋРґР° РёР»Рё РёРјСЏ " + newName +" СѓР¶Рµ Р·Р°РЅСЏС‚Рѕ";
 	         else {
-	        	 updatedFeedBack =dishToUpdate + " изменен на " + newName;  
+	        	 updatedFeedBack =dishToUpdate + " РёР·РјРµРЅРµРЅ РЅР° " + newName;  
 	         }
 	         Marshaller m = context.createMarshaller();
 	         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
@@ -173,11 +173,11 @@ public class Model  {
 		         }
 		         dishlist.addAll(dishlist2) ;
 	
-		         if(dishlist2.isEmpty()) copiedFileFeedBack ="файл " +fileToCopy +" не был добавлен, так как в исходном файле уже есть такие блюда.";
-		         else if (dishNoCopied.isEmpty()) copiedFileFeedBack ="файл " +fileToCopy + " скопирован";
+		         if(dishlist2.isEmpty()) copiedFileFeedBack ="С„Р°Р№Р» " +fileToCopy +" РЅРµ Р±С‹Р» РґРѕР±Р°РІР»РµРЅ, С‚Р°Рє РєР°Рє РІ РёСЃС…РѕРґРЅРѕРј С„Р°Р№Р»Рµ СѓР¶Рµ РµСЃС‚СЊ С‚Р°РєРёРµ Р±Р»СЋРґР°.";
+		         else if (dishNoCopied.isEmpty()) copiedFileFeedBack ="С„Р°Р№Р» " +fileToCopy + " СЃРєРѕРїРёСЂРѕРІР°РЅ";
 		         	else 
 		         {
-		         		copiedFileFeedBack ="файл " +fileToCopy + " скопирован, "+dishNoCopied.size() + " файла не были скопированы ввиду того, что в исходном файле уже есть такие блюда.";  // кинуть в view
+		         		copiedFileFeedBack ="С„Р°Р№Р» " +fileToCopy + " СЃРєРѕРїРёСЂРѕРІР°РЅ, "+dishNoCopied.size() + " С„Р°Р№Р»Р° РЅРµ Р±С‹Р»Рё СЃРєРѕРїРёСЂРѕРІР°РЅС‹ РІРІРёРґСѓ С‚РѕРіРѕ, С‡С‚Рѕ РІ РёСЃС…РѕРґРЅРѕРј С„Р°Р№Р»Рµ СѓР¶Рµ РµСЃС‚СЊ С‚Р°РєРёРµ Р±Р»СЋРґР°.";  
 		         }
 		         Marshaller m = context.createMarshaller();
 		         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);

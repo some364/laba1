@@ -12,12 +12,12 @@ public class View {
 	
 	public static void main (String[] args) throws IOException {
 		
-		System.out.println("Если Вы хотите добавить новое блюдо введите 1, потом в каждой новой строке введите название блюда, категорию и цену.");
-		System.out.println("Если Вы хотите удалить  блюдо введите 2, потом укажите название блюда.");
-		System.out.println("Если Вы хотите изменить  блюдо введите 3, потом укажите в каждой новой строке название блюда которое вы хотите измненить, потом новое название, категорию и цену.");
-		System.out.println("Если Вы хотите скопировать файл в текущей введите 4 и укажите полный путь к файлу.");
-		System.out.println("Если Вы хотите просмотреть все блюда в меню введите 5.");
-		System.out.println("Если ВЫ хотите выйти из программы введите Hasta la vista baby.");
+		System.out.println("Р•СЃР»Рё Р’С‹ С…РѕС‚РёС‚Рµ РґРѕР±Р°РІРёС‚СЊ РЅРѕРІРѕРµ Р±Р»СЋРґРѕ РІРІРµРґРёС‚Рµ 1, РїРѕС‚РѕРј РІ РєР°Р¶РґРѕР№ РЅРѕРІРѕР№ СЃС‚СЂРѕРєРµ РІРІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ Р±Р»СЋРґР°, РєР°С‚РµРіРѕСЂРёСЋ Рё С†РµРЅСѓ.");
+		System.out.println("Р•СЃР»Рё Р’С‹ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ  Р±Р»СЋРґРѕ РІРІРµРґРёС‚Рµ 2, РїРѕС‚РѕРј СѓРєР°Р¶РёС‚Рµ РЅР°Р·РІР°РЅРёРµ Р±Р»СЋРґР°.");
+		System.out.println("Р•СЃР»Рё Р’С‹ С…РѕС‚РёС‚Рµ РёР·РјРµРЅРёС‚СЊ  Р±Р»СЋРґРѕ РІРІРµРґРёС‚Рµ 3, РїРѕС‚РѕРј СѓРєР°Р¶РёС‚Рµ РІ РєР°Р¶РґРѕР№ РЅРѕРІРѕР№ СЃС‚СЂРѕРєРµ РЅР°Р·РІР°РЅРёРµ Р±Р»СЋРґР° РєРѕС‚РѕСЂРѕРµ РІС‹ С…РѕС‚РёС‚Рµ РёР·РјРЅРµРЅРёС‚СЊ, РїРѕС‚РѕРј РЅРѕРІРѕРµ РЅР°Р·РІР°РЅРёРµ, РєР°С‚РµРіРѕСЂРёСЋ Рё С†РµРЅСѓ.");
+		System.out.println("Р•СЃР»Рё Р’С‹ С…РѕС‚РёС‚Рµ СЃРєРѕРїРёСЂРѕРІР°С‚СЊ С„Р°Р№Р» РІ С‚РµРєСѓС‰РµР№ РІРІРµРґРёС‚Рµ 4 Рё СѓРєР°Р¶РёС‚Рµ РїРѕР»РЅС‹Р№ РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ.");
+		System.out.println("Р•СЃР»Рё Р’С‹ С…РѕС‚РёС‚Рµ РїСЂРѕСЃРјРѕС‚СЂРµС‚СЊ РІСЃРµ Р±Р»СЋРґР° РІ РјРµРЅСЋ РІРІРµРґРёС‚Рµ 5.");
+		System.out.println("Р•СЃР»Рё Р’Р« С…РѕС‚РёС‚Рµ РІС‹Р№С‚Рё РёР· РїСЂРѕРіСЂР°РјРјС‹ РІРІРµРґРёС‚Рµ Hasta la vista baby.");
 	//	resources/DishMenu.xml 
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 			
@@ -26,7 +26,7 @@ public class View {
     	   switch(order) {
     	   
        case "1":
-    	 System.out.println("Добавление блюда. В каждой новой строке введите название блюда, категорию и цену блюда которого вы хотите добавить.");    	   
+    	 System.out.println("Р”РѕР±Р°РІР»РµРЅРёРµ Р±Р»СЋРґР°. Р’ РєР°Р¶РґРѕР№ РЅРѕРІРѕР№ СЃС‚СЂРѕРєРµ РІРІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ Р±Р»СЋРґР°, РєР°С‚РµРіРѕСЂРёСЋ Рё С†РµРЅСѓ Р±Р»СЋРґР° РєРѕС‚РѕСЂРѕРіРѕ РІС‹ С…РѕС‚РёС‚Рµ РґРѕР±Р°РІРёС‚СЊ.");    	   
     	   String[] dishData = new String[3];
      		for(int i =0; i < dishData.length; i++) {
       			String newOrder = reader.readLine();
@@ -34,18 +34,18 @@ public class View {
      			}
     	
    	       Controller c1 = new Controller();
-   	       System.out.println(c1.addDish(dishData[0], dishData[1], Integer.valueOf(dishData[2]) ));  // дичь :)
+   	       System.out.println(c1.addDish(dishData[0], dishData[1], Integer.valueOf(dishData[2]) ));  // пїЅпїЅпїЅпїЅ :)
        	   continue;
     	   
        case "2":
-    	   System.out.println("Удаление блюда. Введите название блюда которое вы хотите удалить");
+    	   System.out.println("РЈРґР°Р»РµРЅРёРµ Р±Р»СЋРґР°. Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ Р±Р»СЋРґР° РєРѕС‚РѕСЂРѕРµ РІС‹ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ.");
        	   String newOrder2 = reader.readLine();
     	   Controller c2 = new Controller();
     	   System.out.println(c2.removeDish(newOrder2));
     	   continue;
     	   
        case "3":
-    	   System.out.println("Изменение блюда. Укажите в каждой новой строке название блюда которое вы хотите измненить, потом новое название, категорию и цену.");
+    	   System.out.println("РР·РјРµРЅРµРЅРёРµ Р±Р»СЋРґР°. РЈРєР°Р¶РёС‚Рµ РІ РєР°Р¶РґРѕР№ РЅРѕРІРѕР№ СЃС‚СЂРѕРєРµ РЅР°Р·РІР°РЅРёРµ Р±Р»СЋРґР° РєРѕС‚РѕСЂРѕРµ РІС‹ С…РѕС‚РёС‚Рµ РёР·РјРЅРµРЅРёС‚СЊ, РїРѕС‚РѕРј РЅРѕРІРѕРµ РЅР°Р·РІР°РЅРёРµ, РєР°С‚РµРіРѕСЂРёСЋ Рё С†РµРЅСѓ.");
     	   String[] dishData3 = new String[4];
       		for(int i =0; i < dishData3.length; i++) {
        			String newOrder3 = reader.readLine();
@@ -53,18 +53,18 @@ public class View {
       			}
       		
       		Controller c3 = new Controller();
-      		System.out.println(c3.updateDish(dishData3[0], dishData3[1], dishData3[3], Integer.valueOf(dishData3[3]))); // грязь
+      		System.out.println(c3.updateDish(dishData3[0], dishData3[1], dishData3[3], Integer.valueOf(dishData3[3]))); // пїЅпїЅпїЅпїЅпїЅ
     	   continue;
     	   
        case "4":
-    	   System.out.println("Копирование блюда. Укажите полный путь к файлу.");
+    	   System.out.println("РљРѕРїРёСЂРѕРІР°РЅРёРµ Р±Р»СЋРґР°. РЈРєР°Р¶РёС‚Рµ РїРѕР»РЅС‹Р№ РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ.");
     	   String newOrder4 = reader.readLine();
     	   Controller c4 = new Controller();
     	   System.out.println(c4.uploadFile(newOrder4));    	   
       	   continue;
     	   
        case "5":
-    	   System.out.println("Список блюд.\n");
+    	   System.out.println("РЎРїРёСЃРѕРє Р±Р»СЋРґ.\n");
     	   MenuDish menuDish;
        	   Controller c5 = new Controller();
        	   menuDish =c5.showMenu();
@@ -79,12 +79,12 @@ public class View {
     	   continue;
     	   
     	default :
-    		System.out.println("вы указали неверное значение.");
+    		System.out.println("РІС‹ СѓРєР°Р·Р°Р»Рё РЅРµРІРµСЂРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ.");
     	   } 
         }
        while (!isFlag); 
 
-		System.out.println("программа завершена.");
+		System.out.println("РїСЂРѕРіСЂР°РјРјР° Р·Р°РІРµСЂС€РµРЅР°.");
 		
 		
 		
