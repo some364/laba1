@@ -16,13 +16,26 @@ public class Model  {
 	private static final String FILE_NAME = "src/resources/DishMenu.xml"; 
 	 boolean flag;
 	
-	 public String remove(String dishToRemove) {
-		String removedFeedBack = null;
-		try{
+	 
+	static MenuDish sUnmarshalling() throws JAXBException {
 		 JAXBContext context = JAXBContext.newInstance(MenuDish.class);
-         Unmarshaller um = context.createUnmarshaller();
-         MenuDish menuDish = (MenuDish) um.unmarshal(new File(FILE_NAME));
-         List<Dish> dishlist = menuDish.getDishlist(); 
+	     Unmarshaller um = context.createUnmarshaller();
+	     MenuDish menuDish = (MenuDish) um.unmarshal(new File(FILE_NAME));
+	     
+		return menuDish; 
+	 }
+	static void  sMarshalling(MenuDish menuDish) throws JAXBException {
+		 JAXBContext context = JAXBContext.newInstance(MenuDish.class);
+		 Marshaller marshalling = context.createMarshaller();
+		 marshalling.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+		 marshalling.marshal(menuDish, new File(FILE_NAME));
+	 }
+	 
+	 
+	
+	 public String remove(String dishToRemove) throws JAXBException {
+		String removedFeedBack = null;
+		List<Dish> dishlist = sUnmarshalling().getDishlist();			
         flag = false; 
          for (Dish dish : dishlist) {
           	 if(dish.getName().equalsIgnoreCase(dishToRemove)) {
@@ -33,15 +46,13 @@ public class Model  {
          }
          if(flag == false) removedFeedBack = dishToRemove +" не удалось удалить так как в меню, блюдо уже отсутствует"; 
          else removedFeedBack = "Блюдо " +dishToRemove + " удалено";
-      
+         sMarshalling(sUnmarshalling());
+      /*
          Marshaller m = context.createMarshaller();
          m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
          m.marshal(menuDish, new File(FILE_NAME));
-         
-		}catch (JAXBException e) 
-		{
-			System.out.println(e);
-		}
+      */   
+		
 		return removedFeedBack;
 				
 	}
@@ -53,6 +64,7 @@ public class Model  {
 			 JAXBContext context = JAXBContext.newInstance(MenuDish.class);
 	         Unmarshaller um = context.createUnmarshaller();
 	         MenuDish menuDish = (MenuDish) um.unmarshal(new File(FILE_NAME));
+	         
 	         List<Dish> dishlist = menuDish.getDishlist(); 
 	         boolean flag = false;     
 	         for (Dish dish : dishlist) {
@@ -150,13 +162,13 @@ public class Model  {
 			String copiedFileFeedBack = "";
 			try{
 				 JAXBContext context = JAXBContext.newInstance(MenuDish.class);
-		         Unmarshaller um = context.createUnmarshaller();
-		         MenuDish menuDish = (MenuDish) um.unmarshal(new File(FILE_NAME));
+		         Unmarshaller ummarshaller = context.createUnmarshaller();
+		         MenuDish menuDish = (MenuDish) ummarshaller.unmarshal(new File(FILE_NAME));
 		         List<Dish> dishlist = menuDish.getDishlist(); 
 		         
 		         JAXBContext context2 = JAXBContext.newInstance(MenuDish.class);
-		         Unmarshaller um2 = context2.createUnmarshaller();			         
-		         MenuDish menuDish2 = (MenuDish) um2.unmarshal(new File(fileToCopy));		        
+		         Unmarshaller ummarshaller2 = context2.createUnmarshaller();			         
+		         MenuDish menuDish2 = (MenuDish) ummarshaller2.unmarshal(new File(fileToCopy));		        
 		         List<Dish> dishlist2 = menuDish2.getDishlist(); 
 		              		        
 		         ArrayList<Dish> dishNoCopied = new ArrayList<>();		         
@@ -177,7 +189,7 @@ public class Model  {
 		         else if (dishNoCopied.isEmpty()) copiedFileFeedBack ="файл " +fileToCopy + " скопирован";
 		         	else 
 		         {
-		         		copiedFileFeedBack ="файл " +fileToCopy + " скопирован, "+dishNoCopied.size() + " файла не были скопированы ввиду того, что в исходном файле уже есть такие блюда.";  
+		         		copiedFileFeedBack ="файл " +fileToCopy + " скопирован, "+dishNoCopied.size() + " блюд не были скопированы ввиду того, что в исходном файле уже есть такие блюда.";  
 		         }
 		         Marshaller m = context.createMarshaller();
 		         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
@@ -195,8 +207,8 @@ public class Model  {
 		MenuDish menuDish = null;
 		try{
 			 JAXBContext context = JAXBContext.newInstance(MenuDish.class);
-	         Unmarshaller um = context.createUnmarshaller();
-	         menuDish = (MenuDish) um.unmarshal(new File(FILE_NAME));	        
+	         Unmarshaller ummarshaller = context.createUnmarshaller();
+	         menuDish = (MenuDish) ummarshaller.unmarshal(new File(FILE_NAME));	        
 	         
 		}
 		catch (JAXBException e ) 

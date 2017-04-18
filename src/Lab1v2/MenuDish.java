@@ -13,14 +13,14 @@ public class MenuDish {
     @XmlElementWrapper(name = "dishList")
    
     @XmlElement(name = "Dish")
-    private List<Dish> dishlist;
+    private List<Dish> dishList;
     
-    public void setDishList(List<Dish> dishlist) {
-        this.dishlist = dishlist;
+    public void setDishList(List<Dish> dishList) {
+        this.dishList = dishList;
 }
 
 public List<Dish> getDishlist() {
-        return dishlist;
+        return dishList;
 
   }
 }

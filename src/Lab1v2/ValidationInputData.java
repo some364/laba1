@@ -11,18 +11,16 @@ public class ValidationInputData  {
 	
 	public   String regExPrice() throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		for(;;) {
-		System.out.println("внутри regExPrice");	
+		for(;;) {			
         	String inputString = reader.readLine();
-        	String pattern = "(\\d)";        
+        	String pattern = "[0-9]+";        
         	Pattern ptrn = Pattern.compile(pattern);
         	Matcher matcher = ptrn.matcher(inputString);  
-        	if(matcher.find()) {
-        		System.out.println("norm"); 
+        	if(matcher.matches()) {        		 
         		return inputString;
         	}
         	else {
-        		System.out.println("NE norm"); 
+        		System.out.println("не корректные данные, введите число заново"); 
         		continue;
         }
 		}
@@ -34,10 +32,10 @@ public class ValidationInputData  {
 		for(;;) {
 		System.out.println("внутри regExPrice");	
         	String inputString = reader.readLine();
-        	String pattern = "\\W";        
+        	String pattern ="([a-zA-Z0-9А-Яа-я]){1}([a-zA-Z0-9А-Яа-я\\s\\-\\\"\\$\\.\\,\\)\\(\\[\\]\\'\\://\\/]){0,}";    // : $ # /  "([a-zA-Z0-9А-Яа-я]){1}([a-zA-Z0-9А-Яа-я\\s\\-\\\"\\\']){0,}"
         	Pattern ptrn = Pattern.compile(pattern);
         	Matcher matcher = ptrn.matcher(inputString);  
-        	if(matcher.find()) {
+        	if(matcher.matches()) {
         		System.out.println("norm"); 
         		return inputString;
         	}
@@ -54,7 +52,7 @@ public class ValidationInputData  {
 		for(;;) {
 		System.out.println("внутри regExPrice");	
         	String inputString = reader.readLine();
-        	String pattern = "(^|*\\?<>)";        
+        	String pattern ="([a-zA-Z0-9А-Яа-я]){1}([a-zA-Z0-9А-Яа-я\\s\\-\\\"]){0,}";// "(^|*\\?<>)";        
         	Pattern ptrn = Pattern.compile(pattern);
         	Matcher matcher = ptrn.matcher(inputString);  
         	if(matcher.find()) {

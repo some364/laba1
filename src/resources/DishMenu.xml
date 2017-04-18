@@ -184,11 +184,25 @@
             <price>12</price>
         </Dish>
         <Dish>
-            <name>qwe</name>
+            <name>bubalek</name>
             <category>
-                <categoryName>qwe</categoryName>
+                <categoryName>sladkoe</categoryName>
             </category>
-            <price>12</price>
+            <price>24</price>
+        </Dish>
+        <Dish>
+            <name>Bubolek sladkiy</name>
+            <category>
+                <categoryName>Nishtyak</categoryName>
+            </category>
+            <price>11</price>
+        </Dish>
+        <Dish>
+            <name>Napoleon zheskiy</name>
+            <category>
+                <categoryName>Desert</categoryName>
+            </category>
+            <price>16</price>
         </Dish>
     </dishList>
 </Menu>

@@ -3,6 +3,8 @@ package Lab1v2;
 
 import java.io.IOException;
 
+import javax.xml.bind.JAXBException;
+
 
 public class Controller {
 	
@@ -12,7 +14,7 @@ public class Controller {
 		return m.add(name, category, price);
 		
 	}
-	public String removeDish (String nameToRemove) {
+	public String removeDish (String nameToRemove) throws JAXBException {
 		Model m = new Model();
 		return m.remove(nameToRemove);
 	}

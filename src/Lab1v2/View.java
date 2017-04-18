@@ -5,12 +5,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
+import javax.xml.bind.JAXBException;
+
 
 
 public class View {
 	private static boolean isFlag;	
 	
-	public static void main (String[] args) throws IOException {
+	public static void main (String[] args) throws IOException, JAXBException {
 		
 		System.out.println("Если Вы хотите добавить новое блюдо введите 1, потом в каждой новой строке введите название блюда, категорию и цену.");
 		System.out.println("Если Вы хотите удалить  блюдо введите 2, потом укажите название блюда.");
